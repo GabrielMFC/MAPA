@@ -1,6 +1,6 @@
 const navButtonsHtmlElements = document.getElementsByTagName("button");
 const navButtonsArray = [];
-const pageContent = document.getElementsByTagName("iframe")[0];
+const contentContainer = document.getElementById("content");
 
 for (i=0; i < navButtonsHtmlElements.length; i++){
     navButtonsArray.push(navButtonsHtmlElements[i]);
@@ -20,15 +20,17 @@ async function loadPage(pageName) {
         }
 
         const html = await response.text();
-        document.querySelector("main").innerHTML = html;
+        contentContainer.innerHTML = html;
 
     } catch (error) {
         console.error("Falha ao carregar a página:", error);
     }
 }
 
+contentContainer.innerHTML = loadPage("aboutMe")
+
 navButtonsArray.forEach(button => {
     button.addEventListener("click", async (event) => {
-        pageContent.src = await loadPage(button.id);
+        await loadPage(button.id);
     })
 })

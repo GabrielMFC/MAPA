@@ -1,21 +1,11 @@
-/* ============================================================
-   MAPA — Gabriel Matias Ferreira Costa
-   Direção visual: uma janela do Windows XP (tema Luna Azul),
-   maximizada — ocupando 100% da tela.
-   Responsivo: celular / tablet / computador.
-   ============================================================ */
-
 :root {
-  /* moldura da janela */
   --win-border: #0054e3;
 
-  /* barra de título (gradiente Luna) */
   --title-glow: #3f8cf3;
   --title-mid: #1c5be0;
   --title-dark: #0040c8;
 
-  /* corpo da janela */
-  --chrome: #ece9d8;        /* cinza-areia clássico do XP */
+  --chrome: #ece9d8;
   --chrome-dark: #c8c4b4;
   --content-bg: #ffffff;
   --text: #000000;
@@ -55,24 +45,11 @@ body {
   color: #fff;
 }
 
-/* rectângulo pontilhado clássico de foco do XP, em vez de outline moderno */
 button:focus-visible {
   outline: 2px dotted #000;
   outline-offset: -4px;
 }
 
-/* ------------------------------------------------------------
-   Janela maximizada: titlebar + nav + header + main + footer
-   preenchem a tela inteira, sem bordas nem cantos arredondados
-   contra a área de trabalho — igual a uma janela do XP no
-   estado maximizado.
-   ------------------------------------------------------------ */
-
-/* ------------------------------------------------------------
-   TITLEBAR — barra de título da janela (fora do <nav>, pois
-   os controles de minimizar/maximizar/fechar não são links
-   de navegação do site, são controles de janela)
-   ------------------------------------------------------------ */
 .titlebar {
   flex: none;
   display: flex;
@@ -111,7 +88,6 @@ button:focus-visible {
   letter-spacing: 0.01em;
 }
 
-/* --- botões minimizar / maximizar / fechar --- */
 .titlebar-controls {
   flex: none;
   display: flex;
@@ -170,17 +146,12 @@ button:focus-visible {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
-/* ------------------------------------------------------------
-   NAV — barra de ferramentas (toolbar) com os botões de
-   navegação (Sobre mim / Habilidades / Projetos)
-   ------------------------------------------------------------ */
 nav {
   flex: none;
   background: var(--chrome);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* .nav-buttons agora é uma <ul>, então reseta list-style e margin */
 .nav-buttons {
   list-style: none;
   margin: 0;
@@ -217,9 +188,6 @@ nav {
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
 }
 
-/* ------------------------------------------------------------
-   HEADER — "tela de boas-vindas" estilo tile de usuário do XP
-   ------------------------------------------------------------ */
 header {
   flex: none;
   background: linear-gradient(to bottom, #f2f6ff 0%, var(--content-bg) 60%);
@@ -259,13 +227,9 @@ header p:last-of-type:empty {
   display: none;
 }
 
-/* ------------------------------------------------------------
-   MAIN — corpo da janela (área de conteúdo, tipo Explorer),
-   cresce para preencher todo o espaço restante da tela.
-   ------------------------------------------------------------ */
 main {
   flex: 1 1 auto;
-  min-height: 0; /* permite que o flex item encolha e role, em vez de estourar a tela */
+  min-height: 0;
   display: flex;
   background: var(--content-bg);
   padding: 2.5rem 3rem;
@@ -279,9 +243,6 @@ main {
   font-size: 16px;
 }
 
-/* ------------------------------------------------------------
-   FOOTER — barra de status inferior do XP
-   ------------------------------------------------------------ */
 footer {
   flex: none;
   display: flex;
@@ -296,13 +257,11 @@ footer {
   padding-right: 2rem;
 }
 
-/* address (email + telefone) e o <p> de copyright levam
-   o mesmo estilo de "célula" da barra de status */
 footer address,
 footer p {
   margin: 0;
   padding: 0.65rem 1.25rem;
-  font-style: normal;   /* <address> vem itálico por padrão do navegador */
+  font-style: normal;
   line-height: 1.6;
   border-right: 1px solid var(--chrome-dark);
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.9);
@@ -323,7 +282,6 @@ footer p:last-of-type {
   margin-left: auto;
 }
 
-/* alça de redimensionar, no canto inferior direito da janela */
 footer::after {
   content: "";
   position: absolute;
@@ -338,14 +296,6 @@ footer::after {
       transparent 4px 7px);
 }
 
-/* ============================================================
-   RESPONSIVO
-   Base acima = desktop (> 1024px).
-   Tablet: 601px – 1024px.
-   Celular: até 600px.
-   ============================================================ */
-
-/* ---------------- TABLET ---------------- */
 @media (max-width: 1024px) {
   body {
     font-size: 15px;
@@ -409,14 +359,11 @@ footer::after {
   }
 }
 
-/* ---------------- CELULAR ---------------- */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
   }
 
-  /* em telas bem estreitas a barra de título quebra em duas linhas
-     se precisar, mas o ícone + texto sempre têm prioridade */
   .titlebar {
     height: auto;
     min-height: 38px;
@@ -514,7 +461,6 @@ footer::after {
   }
 }
 
-/* celular bem pequeno (ex.: iPhone SE) */
 @media (max-width: 360px) {
   .titlebar-text {
     font-size: 12px;

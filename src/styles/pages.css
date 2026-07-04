@@ -1,14 +1,3 @@
-/* ============================================================
-   MAPA — estilos das "páginas" (aboutMe / habilities / projects)
-   injetadas via JS dentro de <section id="content">.
-
-   Depende das variáveis definidas em style.css (:root), por isso
-   este arquivo deve ser carregado DEPOIS de style.css no HTML.
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   PAGE-WINDOW — sub-janela XP injetada dentro de #content
-   ------------------------------------------------------------ */
 .page-window {
   display: flex;
   flex-direction: column;
@@ -66,7 +55,6 @@
   color: var(--text);
 }
 
-/* --- painel "sunken" clássico do XP (usado no aside e nas listas) --- */
 .page-body aside,
 .page-body ul {
   background: #fff;
@@ -106,7 +94,6 @@
   text-decoration: underline;
 }
 
-/* --- lista de habilidades, estilo listbox do XP --- */
 .page-body ul.skills-list {
   list-style: none;
   margin: 0;
@@ -127,7 +114,6 @@
   border-bottom: none;
 }
 
-/* --- projetos: cada um vira uma mini-janela dentro da janela --- */
 .projectContainer {
   margin-bottom: 1.25rem;
   background: var(--chrome);
@@ -179,11 +165,6 @@
   text-decoration: underline;
 }
 
-/* ============================================================
-   RESPONSIVO — mesmos breakpoints do style.css
-   ============================================================ */
-
-/* ---------------- TABLET ---------------- */
 @media (max-width: 1024px) {
   .page-titlebar {
     height: 28px;
@@ -199,7 +180,6 @@
   }
 }
 
-/* ---------------- CELULAR ---------------- */
 @media (max-width: 600px) {
   .page-titlebar {
     height: 26px;

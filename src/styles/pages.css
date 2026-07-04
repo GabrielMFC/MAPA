@@ -1,0 +1,226 @@
+/* ============================================================
+   MAPA — estilos das "páginas" (aboutMe / habilities / projects)
+   injetadas via JS dentro de <section id="content">.
+
+   Depende das variáveis definidas em style.css (:root), por isso
+   este arquivo deve ser carregado DEPOIS de style.css no HTML.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   PAGE-WINDOW — sub-janela XP injetada dentro de #content
+   ------------------------------------------------------------ */
+.page-window {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--chrome);
+  border: 1px solid var(--win-border);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.page-titlebar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 0.75rem;
+  background:
+    linear-gradient(to bottom,
+      var(--title-glow) 0%,
+      var(--title-mid) 45%,
+      var(--title-mid) 70%,
+      var(--title-dark) 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.01em;
+}
+
+.page-body {
+  flex: 1 1 auto;
+  background: var(--content-bg);
+  border-top: 1px solid var(--chrome-dark);
+  padding: 1.75rem 2rem;
+}
+
+.page-body h1 {
+  margin: 0 0 1.25rem;
+  font-size: 22px;
+  font-weight: 700;
+  color: #003399;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--chrome-dark);
+}
+
+.page-body h2 {
+  margin: 0 0 0.6rem;
+  font-size: 15px;
+  font-weight: 700;
+  color: #003399;
+}
+
+.page-body p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* --- painel "sunken" clássico do XP (usado no aside e nas listas) --- */
+.page-body aside,
+.page-body ul {
+  background: #fff;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #dfdfdf;
+}
+
+.page-body aside {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.page-body aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.page-body aside li + li {
+  margin-top: 0.4rem;
+}
+
+.page-body aside a {
+  color: #0040c8;
+  text-decoration: none;
+}
+
+.page-body aside a:hover {
+  text-decoration: underline;
+}
+
+/* --- lista de habilidades, estilo listbox do XP --- */
+.page-body ul.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-body ul.skills-list li {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--chrome-dark);
+  font-size: 15px;
+}
+
+.page-body ul.skills-list li:nth-child(even) {
+  background: #f2f1e8;
+}
+
+.page-body ul.skills-list li:last-child {
+  border-bottom: none;
+}
+
+/* --- projetos: cada um vira uma mini-janela dentro da janela --- */
+.projectContainer {
+  margin-bottom: 1.25rem;
+  background: var(--chrome);
+  border: 1px solid var(--win-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.projectContainer:last-child {
+  margin-bottom: 0;
+}
+
+.project-titlebar {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0.65rem;
+  background:
+    linear-gradient(to bottom,
+      var(--title-glow) 0%,
+      var(--title-mid) 45%,
+      var(--title-mid) 70%,
+      var(--title-dark) 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
+}
+
+.projectContainer article {
+  background: var(--content-bg);
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--chrome-dark);
+}
+
+.projectContainer article p {
+  margin: 0 0 0.75rem;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.projectContainer article a {
+  display: inline-block;
+  font-size: 13px;
+  color: #0040c8;
+  text-decoration: none;
+}
+
+.projectContainer article a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVO — mesmos breakpoints do style.css
+   ============================================================ */
+
+/* ---------------- TABLET ---------------- */
+@media (max-width: 1024px) {
+  .page-titlebar {
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .page-body {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .page-body h1 {
+    font-size: 19px;
+  }
+}
+
+/* ---------------- CELULAR ---------------- */
+@media (max-width: 600px) {
+  .page-titlebar {
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .page-body {
+    padding: 1.1rem 1.1rem;
+  }
+
+  .page-body h1 {
+    font-size: 17px;
+  }
+
+  .project-titlebar {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
+
+  .projectContainer article {
+    padding: 0.85rem 1rem;
+  }
+}

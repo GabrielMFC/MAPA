@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAPA</title>
-<link rel="stylesheet" href="src/styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAPA</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="stylesheet" href="src/styles/pages.css">
 </head>
 <body>
-<nav>
+
   <div class="titlebar">
     <span class="titlebar-icon" aria-hidden="true"></span>
     <span class="titlebar-text">MAPA — Gabriel Matias Ferreira Costa</span>
@@ -23,26 +24,34 @@
       </button>
     </div>
   </div>
-  <div class="nav-buttons">
-      <button id="aboutMe">Sobre mim</button>
-      <button id="habilities">Habilidades</button>
-      <button id="projects">Projetos</button>
-  </div>
-</nav>
-<header>
-<p>Gabriel Matias Ferreira Costa</p>
-<p>Frase que me representa</p>
-<img src="assets/eu.jpg" alt="Foto de Gabriel Matias">
-<p></p>
-</header>
-<main>
-<section id="content"></section>
-</main>
-<footer>
-<p>ggezcom991gh@gmail.com</p>
-<p>(24) 998771866</p>
-<p>©2026 Gabriel Matias</p>
-</footer>
-<script src="src/services/index.js"></script>
+
+  <nav aria-label="Navegação principal">
+    <ul class="nav-buttons">
+      <li><button id="aboutMe" type="button">Sobre mim</button></li>
+      <li><button id="habilities" type="button">Habilidades</button></li>
+      <li><button id="projects" type="button">Projetos</button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="assets/eu.jpg" alt="Foto de Gabriel Matias">
+    <p>Gabriel Matias Ferreira Costa</p>
+    <p style="margin: 1%;">Deploy na sexta-feira</p>
+  </header>
+
+  <main>
+    <section id="content" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <address>
+      <a href="mailto:ggezcom991gh@gmail.com">ggezcom991gh@gmail.com</a><br>
+      <a href="tel:+5524998771866">(24) 998771866</a>
+    </address>
+    <p>©2026 Gabriel Matias</p>
+  </footer>
+
+  <script src="src/services/index.js"></script>
+  <script src="src/services/api/api.js"></script>
 </body>
 </html>

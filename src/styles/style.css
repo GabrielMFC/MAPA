@@ -178,7 +178,11 @@ nav {
 }
 
 /* --- botões da toolbar (Sobre mim / Habilidades / Projetos) --- */
-nav > button {
+.nav-buttons {
+  padding: 0% 0% 0.5% 1%;
+}
+
+.nav-buttons > button {
   appearance: none;
   cursor: pointer;
   font-family: var(--font);

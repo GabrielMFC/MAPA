@@ -2,6 +2,7 @@
    MAPA — Gabriel Matias Ferreira Costa
    Direção visual: uma janela do Windows XP (tema Luna Azul),
    maximizada — ocupando 100% da tela.
+   Responsivo: celular / tablet / computador.
    ============================================================ */
 
 :root {
@@ -179,6 +180,10 @@ nav {
 
 /* --- botões da toolbar (Sobre mim / Habilidades / Projetos) --- */
 .nav-buttons {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   padding: 0% 0% 0.5% 1%;
 }
 
@@ -195,12 +200,12 @@ nav {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-nav > button:hover {
+.nav-buttons > button:hover {
   border-color: #3169c6;
   background: linear-gradient(to bottom, #fff6d5 0%, #ffe28f 48%, #ffcf5e 52%, #ffe28f 100%);
 }
 
-nav > button:active {
+.nav-buttons > button:active {
   background: linear-gradient(to bottom, #f5d78e 0%, #f0b93f 100%);
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
 }
@@ -312,45 +317,193 @@ footer::after {
       transparent 4px 7px);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    RESPONSIVO
-   ------------------------------------------------------------ */
-@media (max-width: 700px) {
+   Base acima = desktop (> 1024px).
+   Tablet: 601px – 1024px.
+   Celular: até 600px.
+   ============================================================ */
+
+/* ---------------- TABLET ---------------- */
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
   .titlebar {
-    height: 38px;
+    height: 40px;
   }
 
   .titlebar-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .win-btn {
-    width: 28px;
-    height: 26px;
+    width: 30px;
+    height: 27px;
+  }
+
+  .win-btn img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-buttons > button {
+    font-size: 14px;
+    padding: 0.55rem 1.2rem;
   }
 
   header {
-    padding: 2rem 1.25rem;
+    padding: 2.25rem 1.75rem;
   }
 
   header img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
 
   header p:first-of-type {
-    font-size: 24px;
+    font-size: 26px;
+  }
+
+  header p:nth-of-type(2) {
+    font-size: 16px;
   }
 
   main {
-    padding: 1.5rem 1.25rem;
+    padding: 2rem 1.75rem;
+  }
+
+  #content {
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+
+  footer p {
+    padding: 0.55rem 1rem;
+  }
+}
+
+/* ---------------- CELULAR ---------------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* em telas bem estreitas a barra de título quebra em duas linhas
+     se precisar, mas o ícone + texto sempre têm prioridade */
+  .titlebar {
+    height: auto;
+    min-height: 38px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .titlebar-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .titlebar-text {
+    font-size: 13px;
+  }
+
+  .titlebar-controls {
+    gap: 4px;
+  }
+
+  .win-btn {
+    width: 26px;
+    height: 24px;
+  }
+
+  .win-btn img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .nav-buttons > button {
+    flex: 1 1 auto;
+    font-size: 13px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header img {
+    width: 96px;
+    height: 96px;
+    border-width: 3px;
+    outline-width: 2px;
+  }
+
+  header p:first-of-type {
+    font-size: 20px;
+  }
+
+  header p:nth-of-type(2) {
+    font-size: 14px;
+  }
+
+  main {
+    padding: 1.25rem 1rem;
+  }
+
+  #content {
+    font-size: 14px;
   }
 
   footer {
     justify-content: center;
+    padding-right: 1.25rem;
+  }
+
+  footer p {
+    padding: 0.5rem 0.75rem;
+    font-size: 12px;
   }
 
   footer p:last-of-type {
     margin-left: 0;
+    flex-basis: 100%;
+    text-align: center;
+    border-right: none;
+    padding-top: 0.35rem;
+  }
+
+  footer::after {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* celular bem pequeno (ex.: iPhone SE) */
+@media (max-width: 360px) {
+  .titlebar-text {
+    font-size: 12px;
+  }
+
+  .nav-buttons > button {
+    font-size: 12px;
+    padding: 0.45rem 0.6rem;
+  }
+
+  header img {
+    width: 80px;
+    height: 80px;
+  }
+
+  header p:first-of-type {
+    font-size: 17px;
   }
 }

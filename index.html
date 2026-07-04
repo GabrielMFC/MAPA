@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAPA</title>
-    <link rel="stylesheet" href="src/styles/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAPA</title>
+<link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-    <nav>
-        <button id="aboutMe">Sobre mim</button>
-        <button id="habilities">Habilidades</button>
-        <button id="projects">Projetos</button>
-    </nav>
-    <header>
-        <p>Gabriel Matias Ferreira Costa</p>
-        <p>Frase que me representa</p>
-        <img src="public/eu.jpg" alt="Foto de Gabriel Matias">
-        <p></p>
-    </header>
-
-    <main>
-        <section id="content"></section>
-    </main>
-
-    <footer>
-        <p>ggezcom991gh@gmail.com</p>
-        <p>(24) 998771866</p>
-        <p>©2026 Gabriel Matias</p>
-    </footer>
-
-    <script src="src/services/index.js"></script>
+<nav>
+  <div class="titlebar">
+    <span class="titlebar-icon" aria-hidden="true"></span>
+    <span class="titlebar-text">MAPA — Gabriel Matias Ferreira Costa</span>
+    <div class="titlebar-controls">
+      <button type="button" class="win-btn win-minimize" aria-label="Minimizar">
+        <img src="public/window-minimize.png" alt="">
+      </button>
+      <button type="button" class="win-btn win-maximize" aria-label="Maximizar">
+        <img src="public/maximise.png" alt="">
+      </button>
+      <button type="button" class="win-btn win-close" aria-label="Fechar">
+        <img src="public/cross-mark.png" alt="">
+      </button>
+    </div>
+  </div>
+  <button id="aboutMe">Sobre mim</button>
+  <button id="habilities">Habilidades</button>
+  <button id="projects">Projetos</button>
+</nav>
+<header>
+<p>Gabriel Matias Ferreira Costa</p>
+<p>Frase que me representa</p>
+<img src="public/eu.jpg" alt="Foto de Gabriel Matias">
+<p></p>
+</header>
+<main>
+<section id="content"></section>
+</main>
+<footer>
+<p>ggezcom991gh@gmail.com</p>
+<p>(24) 998771866</p>
+<p>©2026 Gabriel Matias</p>
+</footer>
+<script src="src/services/index.js"></script>
 </body>
 </html>

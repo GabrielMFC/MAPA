@@ -1,0 +1,23 @@
+{
+  "name": "facpage",
+  "version": "1.0.0",
+  "description": "Esse projeto foi feito para realizar uma atividade da faculdade.",
+  "homepage": "https://github.com/GabrielMFC/MAPA#readme",
+  "bugs": {
+    "url": "https://github.com/GabrielMFC/MAPA/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielMFC/MAPA.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

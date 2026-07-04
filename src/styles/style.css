@@ -31,6 +31,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -85,7 +87,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  padding: 0 0.5rem 0.4rem;
   border-top: 2px solid var(--win-border);
   border-radius: var(--radius-top) var(--radius-top) 0 0;
   background: var(--chrome);
@@ -100,7 +101,6 @@ nav {
   align-items: center;
   gap: 0.5rem;
   height: 30px;
-  margin: 0 -0.5rem 0.4rem;
   padding: 0 0.4rem;
   background:
     linear-gradient(to bottom,

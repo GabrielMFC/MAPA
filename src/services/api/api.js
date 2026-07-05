@@ -25,8 +25,12 @@ async function postFeedback(name, feedback) {
 
 document.addEventListener("click", async (event) => {
     if (event.target.id !== "submitFeedbackButton") return;
+    const button = document.getElementById(event.target.id)
 
+    
     try {
+        button.disabled = true
+        button.innerHTML = "Enviando..."
         const nameInput = document.getElementById("nameInput");
         const feedbackTextarea = document.getElementById("feedbackTextarea");
 
@@ -35,7 +39,11 @@ document.addEventListener("click", async (event) => {
             feedbackTextarea.value
         );
         alert("Feedback enviado!")
+        button.disabled = false
+        button.innerHTML = "Enviar"
     } catch (error) {
+        button.disabled = false
+        button.innerHTML = "Enviar"
         alert("O envio falhou, tente novamente mais tarde.")
         console.log(error);
     }

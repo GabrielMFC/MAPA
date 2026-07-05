@@ -1,6 +1,8 @@
-const buttontest = document.getElementById("habilities")
+const nameInput = document.getElementById("nameInput")
+const feedbackTextarea = document.getElementById("feedbackTextarea")
+const submitFeedbackButton = document.getElementById("submitFeedbackButton")
 
-async function postFeedback() {
+async function postFeedback(name, feedback) {
     const response = await fetch(
         "https://zjhbjvjwnpopegulxupe.supabase.co/rest/v1/feedbacks",
         {
@@ -13,16 +15,28 @@ async function postFeedback() {
             "Prefer": "return=representation"
             },
             body: JSON.stringify({
-            name: "Gabrielm",
-            feedback: "Meu feedback2"
+            name: name,
+            feedback: feedback
             })
         }
     );
     return response.json()
 }
 
-buttontest.addEventListener("click", async () => {
-    const data = await postFeedback()
+document.addEventListener("click", async (event) => {
+    if (event.target.id !== "submitFeedbackButton") return;
 
-    console.log(data);
-})
+    try {
+        const nameInput = document.getElementById("nameInput");
+        const feedbackTextarea = document.getElementById("feedbackTextarea");
+
+        const data = await postFeedback(
+            nameInput.value,
+            feedbackTextarea.value
+        );
+        alert("Feedback enviado!")
+    } catch (error) {
+        alert("O envio falhou, tente novamente mais tarde.")
+        console.log(error);
+    }
+});
